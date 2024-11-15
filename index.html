@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单词学习</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div id="uploadPage" class="page">
+            <div class="input-section">
+                <div class="input-mode-switch">
+                    <div class="mode-buttons">
+                        <button id="manualInputBtn" class="mode-btn active">手动输入</button>
+                        <button id="pasteInputBtn" class="mode-btn">粘贴输入</button>
+                    </div>
+                    <button id="clearBtn" class="mode-btn">清空当前内容</button>
+                </div>
+                <div class="input-box">
+                    <div class="input-content">
+                        <div class="input-side">
+                            <div class="label-with-number manual-only">
+                                <label>英文单词</label>
+                                <div class="number-display" id="wordNumber">1</div>
+                            </div>
+                            <div class="label-paste-only hidden">
+                                <label>英文单词</label>
+                            </div>
+                            <textarea 
+                                id="wordInput" 
+                                placeholder="输入当前单词"
+                            ></textarea>
+                        </div>
+                        <div class="input-divider"></div>
+                        <div class="input-side">
+                            <div class="label-with-number manual-only">
+                                <label>中文翻译（可选）</label>
+                                <div class="number-display" id="translationNumber">1</div>
+                            </div>
+                            <div class="label-paste-only hidden">
+                                <label>中文翻译（可选）</label>
+                            </div>
+                            <textarea 
+                                id="translationInput" 
+                                placeholder="输入当前单词的翻译，可以包含多行解释"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="action-buttons manual-only">
+                        <button id="deleteWordBtn" class="delete-word-btn">删除当前单词</button>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button id="prevWordBtn" class="secondary-btn">上一个</button>
+                    <button id="nextWordBtn" class="secondary-btn">下一个</button>
+                </div>
+                <div class="start-learning-section">
+                    <button id="startBtn" class="gradient-btn">开始学习当前内容</button>
+                    <div class="progress">
+                        <span id="uploadProgressText">0个单词</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <div class="preview-content">
+                    <div id="wordsPreview" class="preview-text"></div>
+                    <div class="preview-divider"></div>
+                    <div id="translationsPreview" class="preview-text"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="learningPage" class="page hidden">
+            <div class="word-display">
+                <h1 id="currentWord"></h1>
+                <div class="translation-container">
+                    <button id="showTranslationBtn" class="secondary-btn">显示翻译</button>
+                    <p id="currentTranslation" class="translation hidden"></p>
+                </div>
+                <div class="progress">
+                    <span id="learningProgressText">0/0</span>
+                </div>
+            </div>
+            <div class="control-buttons">
+                <button id="prevBtn" class="nav-btn">上一个</button>
+                <button id="nextBtn" class="nav-btn">下一个</button>
+            </div>
+            <button id="endBtn" class="gradient-btn">结束学习</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 
